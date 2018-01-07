@@ -73,7 +73,7 @@ class StudentValidator
 
     private function validateEmail(string $email, $id)
     {
-        if (!preg_match('/^.+@.+$/u', $email) || mb_strlen($email) > 30 || mb_strlen($email) < 4) {
+        if (!preg_match('/^.+@.+$/u', $email) || mb_strlen($email) > 60 || mb_strlen($email) < 4) {
             return 'Ваш адрес электронной почты должен быть в формате example@mail.com';
         }
         elseif ($this->studentDataGateway->checkEmail($email, $id)) {
@@ -84,8 +84,8 @@ class StudentValidator
 
     private function validateYear(int $year)
     {
-        if ($year > 2001 || $year < 1970) {
-            return 'Ваш год рождения должен быть не ранее 1970 и не позднее 2001';
+        if ($year > 2007 || $year < 1910) {
+            return 'Ваш год рождения должен быть не ранее 1910 и не позднее 2007';
         }
         return null;
     }

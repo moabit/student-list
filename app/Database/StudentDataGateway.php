@@ -37,9 +37,7 @@ class StudentDataGateway
         if (!in_array($orderField, $orderFields) || !in_array($direction, $directions)) {
             throw new \PDOException('Неверный параметр сортировки');
         }
-
         $sql = "SELECT `name`, `surname`, `groupNumber`,`examPoints` FROM `students`";
-
         if ($search !== null) {
             $sql .= " WHERE CONCAT_WS(' ', `name`, `surname`, `groupNumber`) LIKE :search";
 
@@ -62,7 +60,6 @@ class StudentDataGateway
     {
         $sql = "INSERT INTO `students` (`name`, `surname`, `groupNumber`, `examPoints`, `gender`, `email`, `year`, `residence`, `token`)
 		        VALUES (:name, :surname, :groupNumber, :examPoints, :gender, :email, :year, :residence, :token)";
-
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(':name', $student->getName(), \PDO::PARAM_STR);
         $stmt->bindValue(':surname', $student->getSurname(), \PDO::PARAM_STR);
@@ -80,7 +77,6 @@ class StudentDataGateway
     {
         $sql = "UPDATE `students` SET `name`=:name, `surname`=:surname, `groupNumber`=:groupNumber, `examPoints`=:examPoints, `email`=:email,
                 `gender`=:gender, `year`=:year, `residence`=:residence WHERE `token`=:token";
-
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(':name', $student->getName(), \PDO::PARAM_STR);
         $stmt->bindValue(':surname', $student->getSurname(), \PDO::PARAM_STR);
@@ -94,10 +90,9 @@ class StudentDataGateway
         $stmt->execute();
     }
 
-    public function getStudentByToken(string $token): Student
+    public function getStudentByToken(string $token)
     {
         $sql = "SELECT * FROM students WHERE `token` = :token";
-
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(":token", $token, \PDO::PARAM_STR);
         $stmt->execute();

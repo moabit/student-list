@@ -8,7 +8,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $errorHandler = new \Studentlist\Helpers\ErrorHandler();
 $errorHandler->register();
 require_once __DIR__ . '/../app/container.php';
-//include '../addStudents.php';
+//include '../app/addStudents.php';
 $router = $container['router'];
 $router->run($container);
 
