@@ -1,0 +1,9 @@
+{
+  "db":
+  {
+    "host": "localhost",
+    "dbname": "studentlist",
+    "user": "root",
+    "password": "1234"
+  }
+}

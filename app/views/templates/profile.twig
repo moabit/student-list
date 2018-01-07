@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if user is not null  %}
+        <title>Редактирование профилия</title>
+    {% else %}
+        <title>Регистрация</title>
+    {% endif %}
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar  bg-light  border-info">
+    <div class="container">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="btn btn-outline-info" href="/">Вернуться назад</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    {% if user is not null%}
+    <h4 class="text-center m-4 text-muted">Редактирование профилия</h4>
+    {% else %}
+    <h4 class="text-center m-4 text-muted">Регистрация</h4>
+    {% endif %}
+    <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+            {% include 'profileForm.twig' %}
+        </div>
+    </div>
+</div>
+{% include 'footer.twig' %}
+</body>
+</html>

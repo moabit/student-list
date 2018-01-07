@@ -1,0 +1,46 @@
+{% if students is not empty %}
+    {% if pager.search is not null %}
+        <div class="text-center m-4">
+            <h4 class="text-muted">Результат поиска по запросу <span class="font-italic">{{ pager.search|e }} </span>
+            </h4>
+            <a href="/"> Отобразить всех студентов</a></div>
+    {% elseif pager.notify=='registered' %}
+        <h4 class="text-success text-center m-4">Вы успешно зарегистрировались</h4>
+    {% elseif pager.notify=='edited' %}
+        <h4 class="text-success text-center m-4 ">Вы успешно отредактировали свой профиль</h4>
+    {% else %}
+        <h4 class="text-center m-4 text-muted">Список абитуриентов</h4>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-12 mx-auto">
+            <table class="table table-responsive-sm table-striped table-bordered text-center">
+                <thead>
+                <tr>
+                    <th>
+                        <a href="?{{ pager.getSortingLink('name') }}">Имя{{ pager.getPointer('name') }}</a>
+                    </th>
+                    <th>
+                        <a href="?{{ pager.getSortingLink('surname') }}">Фамилия{{ pager.getPointer('surname') }}</a>
+                    </th>
+                    <th><a href="?{{ pager.getSortingLink('groupNumber') }}">Номер
+                            группы{{ pager.getPointer('groupNumber') }}</a></th>
+                    <th><a href="?{{ pager.getSortingLink('examPoints') }}">Суммарный
+                            балл {{ pager.getPointer('examPoints') }}</a></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ student.name|e }}</td>
+                        <td>{{ student.surname|e }}</td>
+                        <td>{{ student.groupNumber|e }}</td>
+                        <td>{{ student.examPoints|e }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% else %}
+    <h4 class="text-center m-4 text-muted">По вашему запросу ничего не найдено</h4>
+{% endif %}

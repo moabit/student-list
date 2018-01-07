@@ -1,0 +1,81 @@
+<form action="" method="POST">
+    <div class="form-group">
+        <label for="name">Имя</label>
+        <input type="text" id="name" size="40" maxlength="100" class="form-control" name='name'
+               placeholder="Введите ваше имя" value="{{ user.name |e }}" required>
+        {% if errors.name is not null %}
+            <p class="text-danger">{{ errors.name }}</p>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="surname">Фамилия</label>
+        <input type="text" class="form-control" id="surname" name='surname' size="40" maxlength="100"
+               placeholder="Введите вашу фамилию" value="{{ user.surname|e }}" required>
+        {% if errors.surname is not null %}
+            <p class="text-danger">{{ errors.surname }}</p>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="gender"> Ваш пол: </label>
+        <select class="form-control" name="gender" id="gender">
+            <option value="m">Мужской</option>
+            <option value="f" {% if user.gender=="f" %} selected {% endif %} >Женский</option>
+        </select>
+        {% if errors.gender is not null %}
+            <p class="text-danger">{{ errors.gender }}</p>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="groupNumber">Номер группы: </label>
+        <input type="text" class="form-control" name="groupNumber" id="groupNumber" size="40" maxlength="5"
+               value="{{ user.groupNumber|e }}" required>
+        {% if errors.groupNumber is not null %}
+            <p class="text-danger">{{ errors.groupNumber }}</p>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label for="email">Почта: </label>
+        <input type="email" class="form-control" name="email" id="email" size="40" maxlength="100"
+               value="{{ user.email|e }}" required>
+        {% if errors.email is not null %}
+            <p class="text-danger">{{ errors.email }}</p>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label for="examPoints">Сумма баллов ЕГЭ: </label>
+        <input type="number" class="form-control" name="examPoints" id="examPoints" maxlength="10"
+               value="{{ user.examPoints|e }}" required>
+        {% if errors.examPoints is not null %}
+            <p class="text-danger">{{ errors.examPoints }}</p>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label for="year">Год рождения: </label>
+        <input type="number" class="form-control" name="year" id="year" maxlength="10"
+               value="{{ user.year|e }}" required>
+        {% if errors.year is not null %}
+            <p class="text-danger">{{ errors.year }}</p>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label for="residence">Происхождение: </label>
+        <select class="form-control" name="residence" id="residence">
+            <option value="resident">Местный</option>
+            <option value="nonresident" {% if user.residence=="nonresident" %} selected {% endif %} >Иногородний
+            </option>
+        </select>
+        {% if errors.residence is not null %}
+            <p class="text-danger">{{ errors.residence }}</p>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <input type="hidden" name="CSRFToken" value="{{ CSRFToken }}">
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-outline-info" value="Отправить данные">
+    </div>
+</form>
