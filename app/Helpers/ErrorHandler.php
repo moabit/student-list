@@ -3,8 +3,15 @@
 namespace Studentlist\Helpers;
 use Studentlist\Exceptions\RouterException;
 
+/**
+ * Class ErrorHandler
+ * @package Studentlist\Helpers
+ */
 class ErrorHandler
 {
+    /**
+     *
+     */
     public function register()
     {
         set_exception_handler([$this, 'exceptionHandler']);
@@ -16,6 +23,9 @@ class ErrorHandler
         });
     }
 
+    /**
+     * @param \Throwable $e
+     */
     public function exceptionHandler(\Throwable $e)
     {
         error_log($e->__toString());

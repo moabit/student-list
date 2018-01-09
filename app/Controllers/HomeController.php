@@ -4,14 +4,25 @@ namespace Studentlist\Controllers;
 
 use Studentlist\Helpers\Pager;
 
+/**
+ * Class HomeController
+ * @package Studentlist\Controllers
+ */
 class HomeController extends Controller
 {
 
+    /**
+     * HomeController constructor.
+     * @param \Pimple\Container $container
+     */
     public function __construct(\Pimple\Container $container)
     {
         parent::__construct($container);
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $userData = $this->getUserData();
@@ -28,6 +39,10 @@ class HomeController extends Controller
         echo $this->view->render('main.twig', ['students' => $students, 'pager' => $pager, 'user' => $this->user]);
     }
 
+    /**
+     * Return an array of GET-variables
+     * @return array
+     */
     protected function getUserData(): array
     {
         $data['field'] = isset($_GET['field']) ? strval($_GET['field']) : 'examPoints';

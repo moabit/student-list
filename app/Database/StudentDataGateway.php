@@ -5,16 +5,31 @@ namespace Studentlist\Database;
 use Studentlist\Entities\Student;
 
 
+/**
+ * Class StudentDataGateway
+ * @package Studentlist\Database
+ */
 class StudentDataGateway
 
 {
+    /**
+     * @var \PDO
+     */
     protected $pdo;
 
+    /**
+     * StudentDataGateway constructor.
+     * @param \PDO $pdo
+     */
     public function __construct(\PDO $pdo)
     {
         $this->pdo = $pdo;
     }
 
+    /**
+     * @param null $search
+     * @return string
+     */
     public function countStudents($search = null): string
     {
         $sql = "SELECT COUNT(*) FROM `students`";
@@ -30,6 +45,14 @@ class StudentDataGateway
         return $stmt->fetchColumn();
     }
 
+    /**
+     * @param $orderField
+     * @param $direction
+     * @param $limit
+     * @param $offset
+     * @param null $search
+     * @return array
+     */
     public function getStudents($orderField, $direction, $limit, $offset, $search = null): array
     {
         $orderFields = ['name', 'surname', 'groupNumber', 'examPoints'];
@@ -56,6 +79,9 @@ class StudentDataGateway
         return $students;
     }
 
+    /**
+     * @param Student $student
+     */
     public function addStudent(Student $student)
     {
         $sql = "INSERT INTO `students` (`name`, `surname`, `groupNumber`, `examPoints`, `gender`, `email`, `year`, `residence`, `token`)
@@ -73,6 +99,9 @@ class StudentDataGateway
         $stmt->execute();
     }
 
+    /**
+     * @param Student $student
+     */
     public function updateStudent(Student $student)
     {
         $sql = "UPDATE `students` SET `name`=:name, `surname`=:surname, `groupNumber`=:groupNumber, `examPoints`=:examPoints, `email`=:email,
@@ -90,6 +119,10 @@ class StudentDataGateway
         $stmt->execute();
     }
 
+    /**
+     * @param string $token
+     * @return mixed
+     */
     public function getStudentByToken(string $token)
     {
         $sql = "SELECT * FROM students WHERE `token` = :token";
@@ -101,6 +134,11 @@ class StudentDataGateway
 
     }
 
+    /**
+     * @param $email
+     * @param $id
+     * @return bool
+     */
     public function checkEmail($email, $id)
     {
         $sql = "SELECT COUNT(*)FROM `students` WHERE `email` = :email";

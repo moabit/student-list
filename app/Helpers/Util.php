@@ -1,14 +1,21 @@
 <?php
-/**
- * collection of utility and security functions
- */
 
 namespace Studentlist\Helpers;
 
 use Studentlist\Exceptions\ConfigException;
 
+/**
+ * Class Util
+ * Collection of utility and security functions
+ * @package Studentlist\Helpers
+ */
 class Util
 {
+    /**
+     * @param $JSONpath
+     * @return array
+     * @throws ConfigException
+     */
     public static function readJSON($JSONpath): array
     {
         if (!file_exists($JSONpath)) {
@@ -22,11 +29,20 @@ class Util
         return $fileContent;
     }
 
+    /**
+     * @param int $length
+     * @return string
+     * @throws \Exception
+     */
     public static function generateToken(int $length = 16): string
     {
         return $token = bin2hex(random_bytes($length));
     }
 
+    /**
+     * @return string
+     * @throws \Exception
+     */
     public static function setCSRFToken()
     {
         $token = isset($_POST['CSRFToken']) ? strval($_POST['CSRFToken']) : self::generateToken();
@@ -34,6 +50,9 @@ class Util
         return $token;
     }
 
+    /**
+     * @return bool
+     */
     public static function checkCSRFToken(): bool
     {
         if (!isset($_COOKIE['CSRFToken']) || !isset($_POST['CSRFToken']) || $_COOKIE['CSRFToken'] != $_POST['CSRFToken']) {

@@ -4,18 +4,32 @@ namespace Studentlist\Validators;
 
 use Studentlist\Entities\Student;
 
+
 /**
- * student validation class
+ * Validates a student object
+ * Class StudentValidator
+ * @package Studentlist\Validators
  */
 class StudentValidator
 {
+    /**
+     * @var
+     */
     protected $studentDataGateway;
 
+    /**
+     * StudentValidator constructor.
+     * @param $studentDataGateway
+     */
     public function __construct($studentDataGateway)
     {
         $this->studentDataGateway = $studentDataGateway;
     }
 
+    /**
+     * @param Student $student
+     * @return array
+     */
     public function validate(Student $student)
     {
         $errors = [];
@@ -31,6 +45,10 @@ class StudentValidator
         return $errors;
     }
 
+    /**
+     * @param string $name
+     * @return null|string
+     */
     private function validateName(string $name)
     {
         if (!preg_match("/^[а-яёa-z][а-яёa-z'-]{0,35}$/iu", $name)) {
@@ -39,6 +57,10 @@ class StudentValidator
         return null;
     }
 
+    /**
+     * @param string $surname
+     * @return null|string
+     */
     private function validateSurname(string $surname)
     {
         if (!preg_match("/^[а-яёa-z][а-яёa-z'-]{0,35}$/ui", $surname)) {
@@ -47,6 +69,10 @@ class StudentValidator
         return null;
     }
 
+    /**
+     * @param string $group
+     * @return null|string
+     */
     private function validateGroupNumber(string $group)
     {
         if (!preg_match('/^[а-яёa-z0-9]{2,5}$/ui', $group))  {
@@ -55,6 +81,10 @@ class StudentValidator
         return null;
     }
 
+    /**
+     * @param int $points
+     * @return null|string
+     */
     private function validateExamPoints(int $points)
     {
         if ($points > 300 || $points < 150) {
@@ -63,6 +93,10 @@ class StudentValidator
         return null;
     }
 
+    /**
+     * @param string $gender
+     * @return null|string
+     */
     private function validateGender(string $gender)
     {
         if ($gender !== Student::GENDER_FEMALE && $gender !== Student::GENDER_MALE) {
@@ -71,6 +105,11 @@ class StudentValidator
         return null;
     }
 
+    /**
+     * @param string $email
+     * @param $id
+     * @return null|string
+     */
     private function validateEmail(string $email, $id)
     {
         if (!preg_match('/^.+@.+$/u', $email) || mb_strlen($email) > 60 || mb_strlen($email) < 4) {
@@ -82,6 +121,10 @@ class StudentValidator
         return null;
     }
 
+    /**
+     * @param int $year
+     * @return null|string
+     */
     private function validateYear(int $year)
     {
         if ($year > 2007 || $year < 1910) {
@@ -90,6 +133,10 @@ class StudentValidator
         return null;
     }
 
+    /**
+     * @param string $residence
+     * @return null|string
+     */
     private function validateResidence(string $residence)
     {
         if ($residence !== Student::RESIDENCE_RESIDENT && $residence !== Student::RESIDENCE_NONRESIDENT) {

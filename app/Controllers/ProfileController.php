@@ -7,17 +7,34 @@ use Studentlist\Helpers\Util;
 use Studentlist\Exceptions\SecurityException;
 
 
+/**
+ * Class ProfileController
+ * @package Studentlist\Controllers
+ */
 class ProfileController extends Controller
 {
+    /**
+     * @var string
+     */
     protected $CSRFToken;
+    /**
+     * @var
+     */
     protected $errors;
 
+    /**
+     * ProfileController constructor.
+     * @param \Pimple\Container $container
+     */
     public function __construct(\Pimple\Container $container)
     {
         parent::__construct($container);
         $this->CSRFToken = Util::setCSRFToken();
     }
 
+    /**
+     * @throws SecurityException
+     */
     public function index()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && $this->user == false) {
@@ -28,6 +45,9 @@ class ProfileController extends Controller
         echo $this->view->render('profile.twig', ['user' => $this->user, 'CSRFToken' => $this->CSRFToken, 'errors' => $this->errors]);
     }
 
+    /**
+     * @throws SecurityException
+     */
     private function registerUser(): void
     {
         $student = $this->getUserData();
@@ -45,6 +65,10 @@ class ProfileController extends Controller
         }
     }
 
+    /**
+     * @param $token
+     * @throws SecurityException
+     */
     private function editUser($token): void
     {
         $student = $this->getUserData();
@@ -60,6 +84,10 @@ class ProfileController extends Controller
         }
     }
 
+    /**
+     * Returns a Student object from POST-variables
+     * @return Student
+     */
     protected function getUserData(): Student
     {
         $student = new Student;

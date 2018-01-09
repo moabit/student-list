@@ -4,11 +4,13 @@ namespace Studentlist\Helpers;
 
 use Studentlist\Exceptions\RouterException;
 
-/**
- * routing class
- */
+
 class Router
 {
+    /**
+     * @param \Pimple\Container $container
+     * @throws RouterException
+     */
     public function run(\Pimple\Container $container)
     {
         //default controller and action
@@ -34,6 +36,9 @@ class Router
         }
     }
 
+    /**
+     * @return mixed
+     */
     protected function getParsedURL()
     {
         return parse_url(trim($_SERVER['REQUEST_URI'], '/'));
