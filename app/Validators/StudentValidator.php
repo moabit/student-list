@@ -52,7 +52,7 @@ class StudentValidator
     private function validateName(string $name)
     {
         if (!preg_match("/^[а-яёa-z][а-яёa-z'-]{0,35}$/iu", $name)) {
-            return 'ошибка имени';
+            return 'Неверный формат имени';
         }
         return null;
     }
@@ -64,7 +64,7 @@ class StudentValidator
     private function validateSurname(string $surname)
     {
         if (!preg_match("/^[а-яёa-z][а-яёa-z'-]{0,35}$/ui", $surname)) {
-            return 'ошибка имени';
+            return 'Неверный формат фамилии';
         }
         return null;
     }
@@ -76,7 +76,7 @@ class StudentValidator
     private function validateGroupNumber(string $group)
     {
         if (!preg_match('/^[а-яёa-z0-9]{2,5}$/ui', $group))  {
-            return 'Ваш адрес электронной почты должен быть в формате example@mail.com';
+            return 'Неверный формат номера группы';
         }
         return null;
     }
