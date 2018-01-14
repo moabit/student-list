@@ -23,4 +23,4 @@ function addStudent($studentDataGateway, $counter = 100)
         $studentDataGateway->addStudent($student);
     }
 }
-addStudent($container['studentDataGateway']);
+

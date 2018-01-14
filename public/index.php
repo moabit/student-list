@@ -9,6 +9,7 @@ $errorHandler = new \Studentlist\Helpers\ErrorHandler();
 $errorHandler->register();
 require_once __DIR__ . '/../app/container.php';
 //include '../app/addStudents.php';
+//addStudent($container['studentDataGateway'], 100);
 $router = $container['router'];
 $router->run($container);
 
