@@ -7,7 +7,7 @@ Student registration system. Browse and search list of students. After registrat
 4. Table Data Gateway pattern
 5. Faker 
 ## Requirements
-1. PHP 7+ and mbstring extension
+1. PHP 7+ and mbstring and PDO extensions
 2. MySQL Database
 3. Composer
 ## Installation
