@@ -1,8 +1,7 @@
 <?php
 use Pimple\Container;
-use Studentlist\Helpers\{Router, Util, Pager};
+use Studentlist\Helpers\{Router, Util, Authorisation};
 use Studentlist\Database\StudentDataGateway;
-use Studentlist\Helpers\Authorisation;
 use Studentlist\Validators\StudentValidator;
 
 $container = new Container();
@@ -31,9 +30,6 @@ $container['twigLoader'] = function ($c) {
 
 $container['twig'] = function ($c) {
     return new Twig_Environment($c['twigLoader']);
-};
-$container['pager'] = function ($c) {
-    return new Pager ();
 };
 
 $container['router'] = function ($c) {

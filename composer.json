@@ -1,12 +1,13 @@
 {
-    "require": {
-        "pimple/pimple": "^3.2",
-        "twig/twig": "^2.4",
-        "fzaninotto/faker":"^1.7.1"
-    },
-    "autoload":{
-       "psr-4":{
-           "Studentlist\\":"app/"
-       }
+  "require": {
+    "pimple/pimple": "^3.2",
+    "twig/twig": "^2.4",
+    "fzaninotto/faker": "^1.7.1",
+    "phpunit/phpunit": "^6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Studentlist\\": "app/"
     }
+  }
 }

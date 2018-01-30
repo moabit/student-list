@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="C:\Apache24\htdocs\studentlist\app\Tests\testingBootstrap.php"
+         colors="true">
+</phpunit>

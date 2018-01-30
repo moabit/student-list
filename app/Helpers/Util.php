@@ -43,7 +43,7 @@ class Util
      * @return string
      * @throws \Exception
      */
-    public static function setCSRFToken()
+    public static function setCSRFToken():string
     {
         $token = isset($_POST['CSRFToken']) ? strval($_POST['CSRFToken']) : self::generateToken();
         setcookie('CSRFToken', $token, strtotime('2 hours'), '/', null, false, true);
