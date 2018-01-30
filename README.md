@@ -16,6 +16,4 @@ Student registration system. Browse and search list of students. After registrat
 3. Set `public` as root directory on your web server
 4. Edit `config.json`
 5. Import `students.sql`
-6. To add more students uncomment `addStudents` in `index.php` file
-
-
+6. To add more students uncomment `addStudents` function in `index.php` file
