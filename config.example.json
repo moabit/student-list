@@ -1,6 +1,5 @@
 {
-  "db":
-  {
+  "db": {
     "host": "example_host",
     "dbname": "example_database_name",
     "user": "example_user",
