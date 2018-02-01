@@ -53,12 +53,12 @@ class StudentDataGateway
      * @param null $search
      * @return array
      */
-    public function getStudents($orderField, $direction, $limit, $offset, $search = null): array
+    public function getStudents(string $orderField, string $direction, int $limit,  int $offset, string $search = null): array
     {
         $orderFields = ['name', 'surname', 'groupNumber', 'examPoints'];
         $directions = ['asc', 'desc'];
         if (!in_array($orderField, $orderFields) || !in_array($direction, $directions)) {
-            throw new \PDOException('Неверный параметр сортировки');
+            throw new \PDOException("Невеверный параметр сортировки. Поле: $orderField Направление: $direction");
         }
         $sql = "SELECT `name`, `surname`, `groupNumber`,`examPoints` FROM `students`";
         if ($search !== null) {

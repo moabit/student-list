@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moabit
- * Date: 23.11.2017
- * Time: 16:59
- */
 
 namespace Studentlist\Helpers;
 
-use Studentlist\Exceptions\AuthException;
+use Studentlist\Entities\Student;
 
 
 /**
@@ -53,11 +47,9 @@ class Authorisation
      * @return mixed
      * @throws AuthException
      */
-    public function getUser()
+    public function getUser(): Student
     {
-        if ($this->isAuth == true) {
-            return $this->user;
-        } else throw new AuthException();
+        return $this->user;
     }
 
     /**

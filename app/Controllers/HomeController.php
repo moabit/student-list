@@ -23,7 +23,7 @@ class HomeController extends Controller
     /**
      *
      */
-    public function index()
+    public function index(): void
     {
         $userData = $this->getUserData();
 
@@ -36,7 +36,7 @@ class HomeController extends Controller
 
         $pager = new Pager ($userData, $studentsQuantity);
 
-        echo $this->view->render('main.twig', ['students' => $students, 'pager' => $pager, 'user' => $this->user]);
+        echo $this->twig->render('main.twig', ['students' => $students, 'pager' => $pager, 'user' => $this->user]);
     }
 
     /**

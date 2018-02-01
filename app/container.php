@@ -1,6 +1,9 @@
 <?php
+
 use Pimple\Container;
-use Studentlist\Helpers\{Router, Util, Authorisation};
+use Studentlist\Helpers\{
+    Router, Util, Authorisation
+};
 use Studentlist\Database\StudentDataGateway;
 use Studentlist\Validators\StudentValidator;
 

@@ -3,6 +3,9 @@
 namespace Studentlist\Validators;
 
 use Studentlist\Entities\Student;
+use Studentlist\Helpers\{
+    Authorisation, Util
+};
 
 
 /**
@@ -21,7 +24,7 @@ class StudentValidator
      * StudentValidator constructor.
      * @param $studentDataGateway
      */
-    public function __construct($studentDataGateway)
+    public function __construct(\Studentlist\Database\StudentDataGateway $studentDataGateway)
     {
         $this->studentDataGateway = $studentDataGateway;
     }
@@ -30,7 +33,7 @@ class StudentValidator
      * @param Student $student
      * @return array
      */
-    public function validate(Student $student)
+    public function validate(Student $student): array
     {
         $errors = [];
         $errors['name'] = $this->validateName($student->getName());
@@ -75,7 +78,7 @@ class StudentValidator
      */
     private function validateGroupNumber(string $group)
     {
-        if (!preg_match('/^[а-яёa-z0-9]{2,5}$/ui', $group))  {
+        if (!preg_match('/^[а-яёa-z0-9]{2,5}$/ui', $group)) {
             return 'Неверный формат номера группы';
         }
         return null;
@@ -114,8 +117,7 @@ class StudentValidator
     {
         if (!preg_match('/^.+@.+$/u', $email) || mb_strlen($email) > 60 || mb_strlen($email) < 4) {
             return 'Ваш адрес электронной почты должен быть в формате example@mail.com';
-        }
-        elseif ($this->studentDataGateway->checkEmail($email, $id)) {
+        } elseif ($this->studentDataGateway->checkEmail($email, $id)) {
             return 'Такой адрес уже имеется в базе данных';
         }
         return null;

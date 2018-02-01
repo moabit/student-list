@@ -19,8 +19,4 @@ class UtilTest extends TestCase
         Util::readJSON('/wrongPath/');
     }
 
-    public function testReadJSON ()
-    {
-
-    }
 }

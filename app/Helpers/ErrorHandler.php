@@ -1,7 +1,7 @@
 <?php
 
 namespace Studentlist\Helpers;
-use Studentlist\Exceptions\RouterException;
+use Studentlist\Exceptions\RouteNotFoundException;
 
 /**
  * Class ErrorHandler
@@ -29,7 +29,7 @@ class ErrorHandler
     public function exceptionHandler(\Throwable $e)
     {
         error_log($e->__toString());
-        if ($e instanceof RouterException) {
+        if ($e instanceof RouteNotFoundException) {
             header("HTTP/1.0 404 Not Found");
             echo "Страница с таким адресом не существует";
         } else {

@@ -55,7 +55,7 @@ class Util
      */
     public static function checkCSRFToken(): bool
     {
-        if (!isset($_COOKIE['CSRFToken']) || !isset($_POST['CSRFToken']) || $_COOKIE['CSRFToken'] != $_POST['CSRFToken']) {
+        if (!isset($_COOKIE['CSRFToken']) || !isset($_POST['CSRFToken']) || $_COOKIE['CSRFToken'] !== $_POST['CSRFToken']) {
             return false;
         }
         return true;

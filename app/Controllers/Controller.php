@@ -2,6 +2,8 @@
 
 namespace Studentlist\Controllers;
 
+use Studentlist\Helpers\Authorisation;
+
 /**
  * Class Controller
  * @package Studentlist\Controllers
@@ -15,11 +17,12 @@ abstract class Controller
     /**
      * @var mixed
      */
-    protected $view;
+    protected $twig;
     /**
      * @var
      */
     protected $user;
+    protected $authorisation;
 
     /**
      * Controller constructor.
@@ -28,19 +31,13 @@ abstract class Controller
     public function __construct(\Pimple\Container $container)
     {
         $this->c = $container;
-        $this->view = $this->c['twig'];
-        if ($this->c['authorisation']->checkAuth() == true) {
-            $this->user = $this->c['authorisation']->getUser();
+        $this->twig = $this->c['twig'];
+        $this->authorisation = new Authorisation($container['studentDataGateway']);
+        if ($this->authorisation->checkAuth() == true) {
+            $this->user = $this->authorisation->getUser();
         }
     }
 
-    public function index()
-    {
+    abstract public function index();
 
-    }
-
-    protected function getUserData()
-    {
-
-    }
 }

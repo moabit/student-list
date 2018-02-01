@@ -2,7 +2,7 @@
 
 namespace Studentlist\Helpers;
 
-use Studentlist\Exceptions\RouterException;
+use Studentlist\Exceptions\RouteNotFoundException;
 
 
 class Router
@@ -26,13 +26,13 @@ class Router
 
         $controller = sprintf('%s\%s\%s%s', 'Studentlist', 'Controllers', ucfirst(strtolower($controller)), 'Controller');
         if (!empty($url[1])) {
-            throw new RouterException('Неправильный путь');
+            throw new RouteNotFoundException('Неправильный путь');
         }
         if (class_exists($controller) && method_exists($controller, $action)) {
             $controller = new $controller($container);
             $controller->$action();
         } else {
-            throw new RouterException('Неправильный путь');
+            throw new RouteNotFoundException('Неправильный путь');
         }
     }
 
