@@ -11,9 +11,9 @@ class RouterTest extends TestCase
 
     public function testRouteNotFoundException()
     {
-        $router= new Router;
+        $router = new Router;
         $this->expectException(RouteNotFoundException::class);
-        $_SERVER['REQUEST_URI']='wrongPath/wrong/';
+        $_SERVER['REQUEST_URI'] = 'wrongPath/wrong/';
         $router->run($GLOBALS['container']);
     }
 }

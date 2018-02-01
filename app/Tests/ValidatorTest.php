@@ -20,11 +20,11 @@ class ValidatorTest extends TestCase
         $student->setEmail('rabinovich@gmail.com');
         $student->setYear(1997);
         $student->setResidence(Student::RESIDENCE_NONRESIDENT);
-        $validator= new StudentValidator ($GLOBALS['container']['studentDataGateway']);
+        $validator = new StudentValidator ($GLOBALS['container']['studentDataGateway']);
         $this->assertEmpty($validator->validate($student));
     }
 
-    public function testStudentValidationWithBadData ()
+    public function testStudentValidationWithBadData()
     {
         $student = new Student;
         $student->setName('1111 bad Name');
@@ -35,7 +35,7 @@ class ValidatorTest extends TestCase
         $student->setEmail('rabinovichgmail');
         $student->setYear(305000);
         $student->setResidence('');
-        $validator= new StudentValidator ($GLOBALS['container']['studentDataGateway']);
+        $validator = new StudentValidator ($GLOBALS['container']['studentDataGateway']);
         $this->assertCount(8, $validator->validate($student));
     }
 }

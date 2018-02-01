@@ -7,15 +7,16 @@
  */
 
 namespace Studentlist\Tests;
+
 use PHPUnit\Framework\TestCase;
 use Studentlist\Helpers\Util;
 use Studentlist\Exceptions\ConfigException;
 
 class UtilTest extends TestCase
 {
-    public function testReadJSONwithWrongPath ()
+    public function testReadJSONwithWrongPath()
     {
-        $this->expectException (ConfigException::class);
+        $this->expectException(ConfigException::class);
         Util::readJSON('/wrongPath/');
     }
 
