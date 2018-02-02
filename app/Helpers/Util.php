@@ -24,7 +24,7 @@ class Util
         $fileContent = file_get_contents($JSONpath);
         $fileContent = json_decode($fileContent, true);
         if ($fileContent == null) {
-            throw new ConfigException('Ошибка в файле конфигурации');
+            throw new ConfigException('Ошибка в файле конфигурации. Ошибка: '. json_last_error_msg ());
         }
         return $fileContent;
     }
