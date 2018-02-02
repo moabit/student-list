@@ -41,7 +41,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Return an array of GET-variables
+     * Returns an array of GET-variables used for sorting and url generation in Pager class
      * @return array
      */
     private function getUserData(): array
@@ -53,6 +53,10 @@ class HomeController extends Controller
         return $data;
     }
 
+    /**
+     * Returns notify-variable if it is set
+     * @return null|string
+     */
     private function getNotify()
     {
         $notify = isset($_GET['notify']) ? strval($_GET['notify']) : null;

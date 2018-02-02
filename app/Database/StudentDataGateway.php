@@ -51,7 +51,7 @@ class StudentDataGateway
      * @param $limit
      * @param $offset
      * @param null $search
-     * @return array
+     * @return array Student[]
      */
     public function getStudents(string $orderField, string $direction, int $limit,  int $offset, string $search = null): array
     {
@@ -135,6 +135,7 @@ class StudentDataGateway
     }
 
     /**
+     * Checks if an email is in the database
      * @param $email
      * @param $id
      * @return bool

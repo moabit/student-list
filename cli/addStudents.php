@@ -3,6 +3,13 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 require_once(__DIR__.'/../app/container.php');
 use Studentlist\Entities\Student;
 use Studentlist\Helpers\Util;
+
+/**
+ * Run this script via command line to add some random students to your database
+ * @param \Studentlist\Database\StudentDataGateway $studentDataGateway
+ * @param int $counter
+ * @throws Exception
+ */
 function addStudent(\Studentlist\Database\StudentDataGateway $studentDataGateway, int $counter)
 {
     $faker = Faker\Factory::create('ru_RU');
@@ -26,8 +33,8 @@ function addStudent(\Studentlist\Database\StudentDataGateway $studentDataGateway
         $studentDataGateway->addStudent($student);
     }
 }
-echo "Enter the number of students you want to add to the database:\n";
+echo "Please enter a number of students you want to add to the database:\n";
 $input=intval(fgets(STDIN));
 addStudent ($container['studentDataGateway'], $input);
-echo "$input Students were added";
+echo "$input students were successfully added!";
 exit;

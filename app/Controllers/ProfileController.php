@@ -50,6 +50,7 @@ class ProfileController extends Controller
     }
 
     /**
+     * Registrates or updates a profile
      * @throws SecurityException
      */
     private function processUser(): void
@@ -78,7 +79,7 @@ class ProfileController extends Controller
 
 
     /**
-     * Returns a Student object from POST-variables
+     * Updates fields of user-object if a user is logged in or creates a new user-object from input data if not
      * @return Student
      */
     private function updateUser(): void
