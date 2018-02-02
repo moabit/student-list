@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b77ee546-eec4-431e-8430-2a5582aa4514" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/ErrorHandler.php" afterPath="$PROJECT_DIR$/app/Helpers/ErrorHandler.php" />
-      <change beforePath="$PROJECT_DIR$/app/container.php" afterPath="$PROJECT_DIR$/app/container.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/404.html" afterPath="$PROJECT_DIR$/views/404.html" />
-      <change beforePath="$PROJECT_DIR$/app/views/500.html" afterPath="$PROJECT_DIR$/views/500.html" />
-      <change beforePath="$PROJECT_DIR$/app/views/templates/footer.twig" afterPath="$PROJECT_DIR$/views/templates/footer.twig" />
-      <change beforePath="$PROJECT_DIR$/app/views/templates/main.twig" afterPath="$PROJECT_DIR$/views/templates/main.twig" />
-      <change beforePath="$PROJECT_DIR$/app/views/templates/pagination.twig" afterPath="$PROJECT_DIR$/views/templates/pagination.twig" />
-      <change beforePath="$PROJECT_DIR$/app/views/templates/profile.twig" afterPath="$PROJECT_DIR$/views/templates/profile.twig" />
-      <change beforePath="$PROJECT_DIR$/app/views/templates/profileForm.twig" afterPath="$PROJECT_DIR$/views/templates/profileForm.twig" />
-      <change beforePath="$PROJECT_DIR$/app/views/templates/studentlist.twig" afterPath="$PROJECT_DIR$/views/templates/studentlist.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,14 +63,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addStudents.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addStudents.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cli/addStudents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding>
-                <element signature="e#104#137#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,7 +121,6 @@
         <option value="$PROJECT_DIR$/phpunit.xml" />
         <option value="$PROJECT_DIR$/app/Tests/phpunit.xml" />
         <option value="$PROJECT_DIR$/app/Tests/testingBootstrap.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/config.example.json" />
         <option value="$PROJECT_DIR$/composer.json" />
@@ -152,6 +150,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0a9fa2ba-5000-4ac0-bdda-a1c8f5262c68/console_2.sql" />
         <option value="$PROJECT_DIR$/app/container.php" />
         <option value="$PROJECT_DIR$/app/Helpers/ErrorHandler.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -237,11 +236,6 @@
             <path>
               <item name="studentlist" type="b2602c69:ProjectViewProjectNode" />
               <item name="studentlist" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="studentlist" type="b2602c69:ProjectViewProjectNode" />
-              <item name="studentlist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -419,7 +413,7 @@
       <workItem from="1517500591159" duration="11584000" />
       <workItem from="1517519973002" duration="8199000" />
       <workItem from="1517580679383" duration="5894000" />
-      <workItem from="1517591994926" duration="3439000" />
+      <workItem from="1517591994926" duration="4351000" />
     </task>
     <task id="LOCAL-00001" summary="Studentlist">
       <created>1515338628026</created>
@@ -526,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517595548913</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="views folder moved to the upper level">
+      <created>1517596113978</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1517596113978</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -562,7 +563,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="553892000" />
+    <option name="totallyTimeSpent" value="554804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -585,7 +586,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21217105" sideWeight="0.48755834" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21217105" sideWeight="0.48755834" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -635,7 +636,6 @@
     <MESSAGE value="Studentlist" />
     <MESSAGE value="added database dump" />
     <MESSAGE value="DocBlocks added" />
-    <MESSAGE value="some fixes" />
     <MESSAGE value="README.md file added" />
     <MESSAGE value="small fix" />
     <MESSAGE value="added example of config fiel" />
@@ -644,7 +644,9 @@
     <MESSAGE value="404 and 500 pages improved" />
     <MESSAGE value="json error message added" />
     <MESSAGE value="cli script added" />
-    <option name="LAST_COMMIT_MESSAGE" value="cli script added" />
+    <MESSAGE value="views folder moved to the upper level" />
+    <MESSAGE value="some fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="some fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -814,13 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Tests/UtilTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -960,11 +955,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cli/addStudents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <element signature="e#104#137#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
