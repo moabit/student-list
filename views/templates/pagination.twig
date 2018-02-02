@@ -3,21 +3,21 @@
         <div class="sm-6 mx-auto">
             <ul class="pagination">
                 {% if pager.currentPage > 1 %}
-                    <li class="page-item"><a class="page-link" href='?{{ pager.getPageLink(pager.currentPage-1) }}'>&laquo;</a>
+                    <li class="page-item"><a class="page-link" href='{{ pager.getPageLink(pager.currentPage-1) }}'>&laquo;</a>
                     </li>
                 {% endif %}
                 {% for i in range(1, pager.totalPages) %}
                     {% if i==pager.currentPage %}
                         <li class="page-item active">
-                            <a class="page-link" href="?{{ pager.getPageLink(loop.index) }}"> {{ loop.index }} <span
+                            <a class="page-link" href="{{ pager.getPageLink(loop.index) }}"> {{ loop.index }} <span
                                         class="sr-only">(current)</span></a></li>
                     {% else %}
                         <li class="page-item"><a class="page-link"
-                                                 href="?{{ pager.getPageLink(loop.index) }}">{{ loop.index }}</a></li>
+                                                 href="{{ pager.getPageLink(loop.index) }}">{{ loop.index }}</a></li>
                     {% endif %}
                 {% endfor %}
                 {% if pager.currentPage != pager.totalPages %}
-                    <li class="page-item"><a class="page-link" href='?{{ pager.getPageLink(pager.currentPage+1) }}'>&raquo;</a>
+                    <li class="page-item"><a class="page-link" href='{{ pager.getPageLink(pager.currentPage+1) }}'>&raquo;</a>
                     </li>
                 {% endif %}
             </ul>

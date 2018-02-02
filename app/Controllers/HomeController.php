@@ -35,22 +35,28 @@ class HomeController extends Controller
         $students = $this->c['studentDataGateway']->getStudents($userData['field'], $userData['direction'], $limit, $offset, $userData['search']);
 
         $pager = new Pager ($userData, $studentsQuantity);
+        $notify = $this->getNotify();
 
-        echo $this->twig->render('main.twig', ['students' => $students, 'pager' => $pager, 'user' => $this->user]);
+        echo $this->twig->render('main.twig', ['students' => $students, 'pager' => $pager, 'user' => $this->user, 'notify' => $notify]);
     }
 
     /**
      * Return an array of GET-variables
      * @return array
      */
-    protected function getUserData(): array
+    private function getUserData(): array
     {
         $data['field'] = isset($_GET['field']) ? strval($_GET['field']) : 'examPoints';
         $data['direction'] = isset($_GET['direction']) ? strval($_GET['direction']) : 'desc';
         $data['page'] = isset($_GET['page']) ? intval($_GET['page'], 10) : null;
         $data['search'] = isset($_GET['search']) ? trim(strval($_GET['search'])) : null;
-        $data['notify'] = isset($_GET['notify']) ? strval($_GET['notify']) : null;
         return $data;
+    }
+
+    private function getNotify()
+    {
+        $notify = isset($_GET['notify']) ? strval($_GET['notify']) : null;
+        return $notify;
     }
 
 

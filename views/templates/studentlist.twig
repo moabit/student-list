@@ -4,9 +4,9 @@
             <h4 class="text-muted">Результат поиска по запросу <span class="font-italic">{{ pager.search|e }} </span>
             </h4>
             <a href="/"> Отобразить всех студентов</a></div>
-    {% elseif pager.notify=='registered' %}
+    {% elseif notify=='registered' %}
         <h4 class="text-success text-center m-4">Вы успешно зарегистрировались</h4>
-    {% elseif pager.notify=='edited' %}
+    {% elseif notify=='edited' %}
         <h4 class="text-success text-center m-4 ">Вы успешно отредактировали свой профиль</h4>
     {% else %}
         <h4 class="text-center m-4 text-muted">Список абитуриентов</h4>
@@ -17,14 +17,14 @@
                 <thead>
                 <tr>
                     <th>
-                        <a href="?{{ pager.getSortingLink('name') }}">Имя{{ pager.getPointer('name') }}</a>
+                        <a href="{{ pager.getSortingLink('name') }}">Имя{{ pager.getPointer('name') }}</a>
                     </th>
                     <th>
-                        <a href="?{{ pager.getSortingLink('surname') }}">Фамилия{{ pager.getPointer('surname') }}</a>
+                        <a href="{{ pager.getSortingLink('surname') }}">Фамилия{{ pager.getPointer('surname') }}</a>
                     </th>
-                    <th><a href="?{{ pager.getSortingLink('groupNumber') }}">Номер
+                    <th><a href="{{ pager.getSortingLink('groupNumber') }}">Номер
                             группы{{ pager.getPointer('groupNumber') }}</a></th>
-                    <th><a href="?{{ pager.getSortingLink('examPoints') }}">Суммарный
+                    <th><a href="{{ pager.getSortingLink('examPoints') }}">Суммарный
                             балл {{ pager.getPointer('examPoints') }}</a></th>
                 </tr>
                 </thead>

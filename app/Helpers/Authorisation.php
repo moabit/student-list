@@ -45,7 +45,6 @@ class Authorisation
 
     /**
      * @return mixed
-     * @throws AuthException
      */
     public function getUser(): Student
     {

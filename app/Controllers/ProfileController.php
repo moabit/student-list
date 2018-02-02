@@ -24,6 +24,7 @@ class ProfileController extends Controller
      */
     protected $errors;
 
+
     /**
      * ProfileController constructor.
      * @param \Pimple\Container $container
@@ -43,7 +44,7 @@ class ProfileController extends Controller
     public function index(): void
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-          $this->processUser();
+            $this->processUser();
         }
         echo $this->twig->render('profile.twig', ['user' => $this->user, 'CSRFToken' => $this->CSRFToken, 'errors' => $this->errors]);
     }
@@ -66,12 +67,11 @@ class ProfileController extends Controller
                 $this->c['studentDataGateway']->addStudent($this->user);
                 header('Location: /?notify=registered');
                 exit;
-            }
-            else {
+            } else {
                 $this->c['studentDataGateway']->updateStudent($this->user);
                 header('Location: /?notify=edited');
                 exit;
-                }
+            }
         }
 
     }
