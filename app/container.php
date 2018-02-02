@@ -28,7 +28,7 @@ $container['studentDataGateway'] = function ($c) {
 };
 
 $container['twigLoader'] = function ($c) {
-    return new Twig_Loader_Filesystem(__DIR__ . '/views/templates');
+    return new Twig_Loader_Filesystem(__DIR__ . '/../views/templates');
 };
 
 $container['twig'] = function ($c) {
