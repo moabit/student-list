@@ -20,4 +20,17 @@ class UtilTest extends TestCase
         Util::readJSON('/wrongPath/');
     }
 
+    public function testCheckCSRFToken ()
+    {
+        $_COOKIE['CSRFToken']="";
+        $_POST['CSRFToken']="";
+        $this->assertFalse(Util::checkCSRFToken());
+        $_COOKIE['CSRFToken']="wrongToken";
+        $_POST['CSRFToken']="badToken";
+        $this->assertFalse(Util::checkCSRFToken());
+        $_COOKIE['CSRFToken']="sameToken";
+        $_POST['CSRFToken']="sameToken";
+        $this->assertTrue(Util::checkCSRFToken());
+    }
+
 }
