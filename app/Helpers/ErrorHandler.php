@@ -1,6 +1,7 @@
 <?php
 
 namespace Studentlist\Helpers;
+
 use Studentlist\Exceptions\RouteNotFoundException;
 
 /**
@@ -31,10 +32,10 @@ class ErrorHandler
         error_log($e->__toString());
         if ($e instanceof RouteNotFoundException) {
             header("HTTP/1.0 404 Not Found");
-            include (__DIR__ . '/../../views/404.html');
+            include(__DIR__ . '/../../views/404.html');
         } else {
             header("HTTP/1.0 500 Internal Server Error");
-            include (__DIR__ . '/../../views/500.html');
+            include(__DIR__ . '/../../views/500.html');
         }
     }
 }

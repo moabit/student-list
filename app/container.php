@@ -32,7 +32,7 @@ $container['twigLoader'] = function ($c) {
 };
 
 $container['twig'] = function ($c) {
-    return new Twig_Environment($c['twigLoader'], ['strict_variables'=>true]);
+    return new Twig_Environment($c['twigLoader'], ['strict_variables' => true]);
 };
 
 $container['router'] = function ($c) {

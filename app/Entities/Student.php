@@ -154,9 +154,9 @@ class Student
     /**
      * @param $id
      */
-    public function setID ($id)
+    public function setID($id)
     {
-        $this->id=$id;
+        $this->id = $id;
     }
 
     /**

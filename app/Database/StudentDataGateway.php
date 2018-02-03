@@ -53,7 +53,7 @@ class StudentDataGateway
      * @param null $search
      * @return array Student[]
      */
-    public function getStudents(string $orderField, string $direction, int $limit,  int $offset, string $search = null): array
+    public function getStudents(string $orderField, string $direction, int $limit, int $offset, string $search = null): array
     {
         $orderFields = ['name', 'surname', 'groupNumber', 'examPoints'];
         $directions = ['asc', 'desc'];

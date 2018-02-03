@@ -56,7 +56,7 @@ class Authorisation
      */
     public function checkAuth(): bool
     {
-        $this->isAuth=false;
+        $this->isAuth = false;
         if (isset($_COOKIE['token'])) {
             $student = $this->studentDataGateway->getStudentByToken(strval($_COOKIE['token']));
             if ($student != false) {

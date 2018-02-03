@@ -24,7 +24,7 @@ class Util
         $fileContent = file_get_contents($JSONpath);
         $fileContent = json_decode($fileContent, true);
         if ($fileContent == null) {
-            throw new ConfigException('Ошибка в файле конфигурации. Ошибка: '. json_last_error_msg ());
+            throw new ConfigException('Ошибка в файле конфигурации. Ошибка: ' . json_last_error_msg());
         }
         return $fileContent;
     }
@@ -43,7 +43,7 @@ class Util
      * @return string
      * @throws \Exception
      */
-    public static function setCSRFToken():string
+    public static function setCSRFToken(): string
     {
         $token = isset($_POST['CSRFToken']) ? strval($_POST['CSRFToken']) : self::generateToken();
         setcookie('CSRFToken', $token, strtotime('2 hours'), '/', null, false, true);
@@ -55,7 +55,7 @@ class Util
      */
     public static function checkCSRFToken(): bool
     {
-        if (!isset($_COOKIE['CSRFToken']) || !isset($_POST['CSRFToken']) || $_COOKIE['CSRFToken'] !== $_POST['CSRFToken']||($_COOKIE['CSRFToken']==null&&$_POST['CSRFToken']==null) ) {
+        if (!isset($_COOKIE['CSRFToken']) || !isset($_POST['CSRFToken']) || $_COOKIE['CSRFToken'] !== $_POST['CSRFToken'] || ($_COOKIE['CSRFToken'] == null && $_POST['CSRFToken'] == null)) {
             return false;
         }
         return true;
