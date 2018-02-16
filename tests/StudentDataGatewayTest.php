@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Studentlist\Tests;
+namespace Testsuite;
 
 use PHPUnit\Framework\TestCase;
 use Studentlist\Helpers\Util;
@@ -50,8 +50,9 @@ class StudentDataGatewayTest extends TestCase
         $this->studentDataGateway->getStudents('surname', 'wrongDirection', 15, 0);
     }
 
-    public function testAddStudent()
+    public function testAddandCountStudent()
     {
+        $quantityBefore = $this->studentDataGateway->countStudents();
         $student = new Student ();
         $token = Util::generateToken();
         $student->setName('Авраам');
@@ -66,6 +67,8 @@ class StudentDataGatewayTest extends TestCase
         $this->studentDataGateway->addStudent($student);
         $student = $this->studentDataGateway->getStudentByToken($token);
         $this->assertNotNull($student);
+        $quantityAfter = $this->studentDataGateway->countStudents();
+        $this->assertTrue($quantityAfter - $quantityBefore == 1);
     }
 
 }

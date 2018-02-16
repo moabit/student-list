@@ -72,7 +72,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getID()
+    public function getID():int
     {
         return $this->id;
     }
@@ -80,7 +80,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getName()
+    public function getName():string
     {
         return $this->name;
     }
@@ -88,7 +88,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getSurname()
+    public function getSurname(): string
     {
         return $this->surname;
     }
@@ -96,7 +96,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getGroupNumber()
+    public function getGroupNumber(): string
     {
         return $this->groupNumber;
     }
@@ -104,7 +104,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getExamPoints()
+    public function getExamPoints(): int
     {
         return $this->examPoints;
     }
@@ -112,7 +112,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getGender()
+    public function getGender(): string
     {
         return $this->gender;
     }
@@ -120,7 +120,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -128,7 +128,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getYear()
+    public function getYear(): int
     {
         return $this->year;
     }
@@ -136,7 +136,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getResidence()
+    public function getResidence(): string
     {
         return $this->residence;
     }
@@ -144,7 +144,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getToken()
+    public function getToken(): string
     {
         return $this->token;
     }
@@ -154,7 +154,7 @@ class Student
     /**
      * @param $id
      */
-    public function setID($id)
+    public function setID(int $id): void
     {
         $this->id = $id;
     }
@@ -162,7 +162,7 @@ class Student
     /**
      * @param $name
      */
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
@@ -170,7 +170,7 @@ class Student
     /**
      * @param $surname
      */
-    public function setSurname($surname)
+    public function setSurname(string $surname): void
     {
         $this->surname = $surname;
     }
@@ -178,7 +178,7 @@ class Student
     /**
      * @param $groupNumber
      */
-    public function setGroupNumber($groupNumber)
+    public function setGroupNumber(string $groupNumber): void
     {
         $this->groupNumber = $groupNumber;
     }
@@ -186,7 +186,7 @@ class Student
     /**
      * @param $examPoints
      */
-    public function setExamPoints($examPoints)
+    public function setExamPoints(int $examPoints): void
     {
         $this->examPoints = $examPoints;
     }
@@ -194,7 +194,7 @@ class Student
     /**
      * @param $gender
      */
-    public function setGender($gender)
+    public function setGender(string $gender): void
     {
         $this->gender = $gender;
     }
@@ -202,7 +202,7 @@ class Student
     /**
      * @param $email
      */
-    public function setEmail($email)
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
@@ -210,7 +210,7 @@ class Student
     /**
      * @param $year
      */
-    public function setYear($year)
+    public function setYear(int $year): void
     {
         $this->year = $year;
     }
@@ -218,7 +218,7 @@ class Student
     /**
      * @param $residence
      */
-    public function setResidence($residence)
+    public function setResidence(string $residence): void
     {
         $this->residence = $residence;
     }
@@ -226,7 +226,7 @@ class Student
     /**
      * @param $token
      */
-    public function setToken($token)
+    public function setToken(string $token): void
     {
         $this->token = $token;
     }

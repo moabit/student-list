@@ -40,6 +40,15 @@ class Util
     }
 
     /**
+     * @param string $str
+     * @return string
+     */
+    public static function mbUcfirst(string $str): string
+    {
+        return mb_strtoupper(mb_substr($str, 0, 1)) . mb_substr($str, 1, mb_strlen($str));
+    }
+
+    /**
      * @return string
      * @throws \Exception
      */

@@ -87,8 +87,8 @@ class ProfileController extends Controller
         if (!$this->user) {
             $this->user = new Student();
         }
-        $this->user->setName(ucfirst(trim(strval($_POST['name']))));
-        $this->user->setSurname(ucfirst(trim(strval($_POST['surname']))));
+        $this->user->setName(Util::mbUcfirst(trim(strval($_POST['name']))));
+        $this->user->setSurname(Util::mbUcfirst(trim(strval($_POST['surname']))));
         $this->user->setGroupNumber(trim(strval($_POST['groupNumber'])));
         $this->user->setExamPoints(intval($_POST['examPoints'], 10));
         $this->user->setGender(strval($_POST['gender']));

@@ -1,6 +1,6 @@
 <?php
 
-namespace Studentlist\Tests;
+namespace Testsuite;
 
 use PHPUnit\Framework\TestCase;
 use Studentlist\Validators\StudentValidator;
@@ -12,6 +12,7 @@ class ValidatorTest extends TestCase
     public function testStudentValidation()
     {
         $student = new Student;
+        $student->setID (42);
         $student->setName('Авраам');
         $student->setSurname('Рабинович');
         $student->setGroupNumber('ААА11');
@@ -27,12 +28,13 @@ class ValidatorTest extends TestCase
     public function testStudentValidationWithBadData()
     {
         $student = new Student;
+        $student->setID (42);
         $student->setName('1111 bad Name');
         $student->setSurname('1111 bad Surname');
         $student->setGroupNumber('veryLongGroupNumber');
         $student->setExamPoints(100000);
         $student->setGender('');
-        $student->setEmail('rabinovichgmail');
+        $student->setEmail('r');
         $student->setYear(305000);
         $student->setResidence('');
         $validator = new StudentValidator ($GLOBALS['container']['studentDataGateway']);

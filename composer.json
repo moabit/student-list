@@ -11,5 +11,10 @@
     "psr-4": {
       "Studentlist\\": "app/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Testsuite\\": "tests/"
+    }
   }
 }

@@ -42,29 +42,29 @@ class Pager
      * @param $field
      * @return string
      */
-    public function getSortingLink($field):string
+    public function getSortingLink($field): string
     {
         $direction = 'asc';
         if ($field == $this->params['field']) {
             $direction = $this->params['direction'] == 'asc' ? 'desc' : 'asc';
         }
-        return '?'. $this->generateURL(['direction' => $direction, 'field' => $field, 'page' => 1]);
+        return '?' . $this->generateURL(['direction' => $direction, 'field' => $field, 'page' => 1]);
     }
 
     /**
      * @param $page
      * @return string
      */
-    public function getPageLink($page):string
+    public function getPageLink($page): string
     {
-        return '?'.$this->generateURL(['page' => $page]);
+        return '?' . $this->generateURL(['page' => $page]);
     }
 
     /**
      * @param $params
      * @return string
      */
-    private function generateURL($params):string
+    private function generateURL($params): string
     {
         return http_build_query(array_replace($this->params, $params));
     }
@@ -84,7 +84,7 @@ class Pager
     /**
      * @return float
      */
-    public function getTotalPages():int
+    public function getTotalPages(): int
     {
         return $this->totalPages;
     }
@@ -92,7 +92,7 @@ class Pager
     /**
      * @return int|mixed
      */
-    public function getCurrentPage():int
+    public function getCurrentPage(): int
     {
         return $this->currentPage;
     }
